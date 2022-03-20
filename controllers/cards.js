@@ -13,7 +13,7 @@ const createCard = (req, res, next) => {
     Cvv,
     Amount,
   })
-    .then((item) => res.send({ RequestId: item._id, Amount: Amount }))
+    .then((item) => res.send(item))
     .catch((err) => {
       if (err.name === 'ValidationError') {
         throw new Error('Некоректные данные');
